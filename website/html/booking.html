@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Page</title>
+    <link rel="icon" type="image/x-icon" href="/media/icon1.png">
+    <link rel="stylesheet" href="/css/booking.css">
+</head>
+<body>
+
+    <div class="booking-page">
+
+        <header class="top-header">
+            <div class="header-content">
+                <img src="/media/logo-placeholder.png" class="logo" alt="logo">
+                <div class="match-info">
+                    <h1 id="matchName"></h1>
+                    <p id="matchDateTime"></p>
+                </div>
+            </div>
+        </header>
+
+        <div class="stadium-section">
+            <img src="/media/stadium-map.png" class="stadium-map" alt="stadium map">
+        </div>
+
+        <div class="ticket-counter">
+
+            <form id="bookingForm">
+
+                <div class="row">
+                    <label for="numTickets">Number of Tickets:</label>
+                    <input type="number" id="numTickets" name="numTickets" min="1" max="10" class="small-input">
+
+                    <label class="second-label" for="categorySelect">Select Category:</label>
+                    <select id="categorySelect" name="category">
+                        <option value="All">All</option>
+                        <option value="VIP">VIP</option>
+                        <option value="Category 1">Category 1</option>
+                        <option value="Category 2">Category 2</option>
+                        <option value="Category 3">Category 3</option>
+                        <option value="Category 4">Category 4</option>
+                    </select>
+                </div>
+
+                <div class="row">
+                    <label for="userName">Your Name:</label>
+                    <input type="text" id="userName" name="userName" placeholder="Enter your full name" class="name-input" required maxlength="100">
+                </div>
+
+                <div class="row meal-row">
+                    <label>Would you like a meal?</label>
+                    <div class="meal-options">
+                        <label class="meal-label">
+                            <input type="radio" name="meal" value="Yes" required> Yes
+                        </label>
+                        <label class="meal-label">
+                            <input type="radio" name="meal" value="No"> No
+                        </label>
+                    </div>
+                </div>
+
+            </form>
+
+        </div>
+
+        <section class="tickets-section">
+
+            <div class="tickets-scroll">
+
+                <div class="ticket-card" data-category="Category 1" data-row="A12" data-price="700">
+                    <div class="ticket-info">
+                        <h2>Category 1</h2>
+                        <p>Row A12</p>
+                        <p>Clear view, You will be seated together.</p>
+                        <p class="highlight">LOWEST PRICE IN SECTION</p>
+                    </div>
+                    <div class="ticket-action">
+                        <h3>700 SAR</h3>
+                        <label class="select-label">
+                            <input type="checkbox" class="ticket-checkbox"> Select
+                        </label>
+                    </div>
+                </div>
+
+                <div class="ticket-card" data-category="Category 3" data-row="C15" data-price="250">
+                    <div class="ticket-info">
+                        <h2>Category 3</h2>
+                        <p>Row C15</p>
+                        <p>Clear view, Comfortable seating.</p>
+                    </div>
+                    <div class="ticket-action">
+                        <h3>250 SAR</h3>
+                        <label class="select-label">
+                            <input type="checkbox" class="ticket-checkbox"> Select
+                        </label>
+                    </div>
+                </div>
+
+                <div class="ticket-card" data-category="Category 4" data-row="D30" data-price="120">
+                    <div class="ticket-info">
+                        <h2>Category 4</h2>
+                        <p>Row D30</p>
+                        <p>Upper level seating, Budget option.</p>
+                    </div>
+                    <div class="ticket-action">
+                        <h3>120 SAR</h3>
+                        <label class="select-label">
+                            <input type="checkbox" class="ticket-checkbox"> Select
+                        </label>
+                    </div>
+                </div>
+
+                <div class="ticket-card" data-category="VIP" data-row="Front Row" data-price="1200">
+                    <div class="ticket-info">
+                        <h2>VIP</h2>
+                        <p>Front Row</p>
+                        <p>Premium experience, Best view in the stadium.</p>
+                    </div>
+                    <div class="ticket-action">
+                        <h3>1200 SAR</h3>
+                        <label class="select-label">
+                            <input type="checkbox" class="ticket-checkbox"> Select
+                        </label>
+                    </div>
+                </div>
+
+                <div class="ticket-card" data-category="Category 2" data-row="B24" data-price="450">
+                    <div class="ticket-info">
+                        <h2>Category 2</h2>
+                        <p>Row B24 | 2 Tickets</p>
+                        <p>Great view, Seats are next to each other.</p>
+                    </div>
+                    <div class="ticket-action">
+                        <h3>450 SAR</h3>
+                        <label class="select-label">
+                            <input type="checkbox" class="ticket-checkbox"> Select
+                        </label>
+                    </div>
+                </div>
+
+                <div class="ticket-card" data-category="Category 1" data-row="A8" data-price="750">
+                    <div class="ticket-info">
+                        <h2>Category 1</h2>
+                        <p>Row A8</p>
+                        <p>Excellent view, Seats together.</p>
+                        <p class="highlight">HIGH DEMAND</p>
+                    </div>
+                    <div class="ticket-action">
+                        <h3>750 SAR</h3>
+                        <label class="select-label">
+                            <input type="checkbox" class="ticket-checkbox"> Select
+                        </label>
+                    </div>
+                </div>
+
+                <div class="ticket-card" data-category="Category 2" data-row="B14" data-price="420">
+                    <div class="ticket-info">
+                        <h2>Category 2</h2>
+                        <p>Row B14</p>
+                        <p>Great view, Comfortable seating.</p>
+                    </div>
+                    <div class="ticket-action">
+                        <h3>420 SAR</h3>
+                        <label class="select-label">
+                            <input type="checkbox" class="ticket-checkbox"> Select
+                        </label>
+                    </div>
+                </div>
+
+                <div class="ticket-card" data-category="Category 3" data-row="C10" data-price="230">
+                    <div class="ticket-info">
+                        <h2>Category 3</h2>
+                        <p>Row C10</p>
+                        <p>Clear view, Good atmosphere.</p>
+                    </div>
+                    <div class="ticket-action">
+                        <h3>230 SAR</h3>
+                        <label class="select-label">
+                            <input type="checkbox" class="ticket-checkbox"> Select
+                        </label>
+                    </div>
+                </div>
+
+                <div class="ticket-card" data-category="Category 4" data-row="D25" data-price="110">
+                    <div class="ticket-info">
+                        <h2>Category 4</h2>
+                        <p>Row D25</p>
+                        <p>Upper level, Side seating.</p>
+                    </div>
+                    <div class="ticket-action">
+                        <h3>110 SAR</h3>
+                        <label class="select-label">
+                            <input type="checkbox" class="ticket-checkbox"> Select
+                        </label>
+                    </div>
+                </div>
+
+                <div class="ticket-card" data-category="VIP" data-row="Front Row Left" data-price="1350">
+                    <div class="ticket-info">
+                        <h2>VIP</h2>
+                        <p>Front Row Left</p>
+                        <p>Exclusive seats, Premium experience.</p>
+                    </div>
+                    <div class="ticket-action">
+                        <h3>1350 SAR</h3>
+                        <label class="select-label">
+                            <input type="checkbox" class="ticket-checkbox"> Select
+                        </label>
+                    </div>
+                </div>
+
+                <div class="ticket-card" data-category="Category 1" data-row="A18" data-price="680">
+                    <div class="ticket-info">
+                        <h2>Category 1</h2>
+                        <p>Row A18</p>
+                        <p>Clear central view, Seats together.</p>
+                    </div>
+                    <div class="ticket-action">
+                        <h3>680 SAR</h3>
+                        <label class="select-label">
+                            <input type="checkbox" class="ticket-checkbox"> Select
+                        </label>
+                    </div>
+                </div>
+
+                <div class="ticket-card" data-category="Category 2" data-row="B30" data-price="400">
+                    <div class="ticket-info">
+                        <h2>Category 2</h2>
+                        <p>Row B30</p>
+                        <p>Good view, Limited seats available.</p>
+                    </div>
+                    <div class="ticket-action">
+                        <h3>400 SAR</h3>
+                        <label class="select-label">
+                            <input type="checkbox" class="ticket-checkbox"> Select
+                        </label>
+                    </div>
+                </div>
+
+                <div class="ticket-card" data-category="Category 3" data-row="C22" data-price="210">
+                    <div class="ticket-info">
+                        <h2>Category 3</h2>
+                        <p>Row C22</p>
+                        <p>Standard view, Budget friendly.</p>
+                    </div>
+                    <div class="ticket-action">
+                        <h3>210 SAR</h3>
+                        <label class="select-label">
+                            <input type="checkbox" class="ticket-checkbox"> Select
+                        </label>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <div class="confirm-section">
+            <p id="msg"></p>
+            <button type="button" id="confirmBtn" class="confirm-btn">Confirm Booking</button>
+        </div>
+
+    </div>
+
+    <footer class="footer">
+        ©️ 2026 Host Nation | All Rights Reserved
+    </footer>
+
+    <script src="/Js/booking.js"></script>
+    <script src="/Js/navbar.js"></script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Home Page</title>
+        <link rel="icon" type="image/x-icon" href="/media/icon1.png">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/css/homePageStyle.css">
+    </head>
+    <body>
+
+        <div id="headerSection">
+            <header>
+                <a href="/html/index.html">
+                    <img src="/media/MainLogo.png" alt="Saudi World Cup logo" id="mainLogo">
+                </a>
+                <button id="burgerButton">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <nav aria-label="Main navigation">
+                    <ul id="navMenu">
+                        <li><a href="/html/MyTickets.html">My Tickets</a></li>
+                        <li><a href="/html/about-us.html">About Us</a></li>
+                        <li><a href="/html/contact.html">Contact Us</a></li>
+                        <li><a href="/html/login.html" id="loginBorder">Login</a></li>
+                    </ul>
+                </nav>
+            </header>
+
+            <section class="homePageParagraph">
+                <h1>
+                    Find your place in the largest World Cup tournament in history.
+                    <br>The 2034 tournament spans five cities, 15 stadiums, and 104 matches.
+                </h1>
+            </section>
+        </div>
+
+        <main>
+            <section id="ticketsSection">
+                <h2>Upcoming World Cup Matches</h2>
+                <div class="ticketCard">
+                    <img src="/media/aramcost.png" class="ticketImg"  alt="Aramco Stadium">
+                    <div class="ticketInfo">
+                    <div class="ticketSide">
+                        <time datetime="2034-06-17" class="day">17 Jun</time>
+                        
+                        <time datetime="18:00" class="time">6:00 PM</time>
+                    </div>
+                    <div class="ticketRightSide">
+                        <h3>Canada vs Qatar - Match 1 Group A</h3>
+                      <p>Aramco stadium, al-Khobar</p>
+                    
+                    </div>
+                    <a href="#" class="TicBtn" onclick="handleTicketClick(event, 'booking.html?match=Canada vs Qatar - Match 1 Group A&date=17 Jun&time=6:00 pm')">Tickets</a>
+                    </div>
+                    
+                    
+                </div>
+                <div class="ticketCard">
+                    <img src="/media/Neomst.png" class="ticketImg"  alt="NEOM Stadium">
+                    <div class="ticketInfo">
+                    <div class="ticketSide">
+                        <time datetime="2034-06-19" class="day">19 Jun</time>
+                        
+                        <time datetime="18:00" class="time">9:00 PM</time>
+                    </div>
+                    <div class="ticketRightSide">
+                        <h3>Germany vs Japan - Match 2 Group A</h3>
+                      <p>NEOM Stadium, NEOM</p>
+                    
+                    </div>
+                    <a href="#" class="TicBtn" onclick="handleTicketClick(event, 'booking.html?match=Germany vs Japan - Match 2 Group A&date=19 Jun&time=9:00 pm')">Tickets</a>
+                    </div>
+                </div>
+                <div class="ticketCard">
+                    <img src="/media/NewMurabbaStadium.jpg" class="ticketImg"  alt="New Murabba Stadium Stadium">
+                    <div class="ticketInfo">
+                    <div class="ticketSide">
+                        <time datetime="2034-06-21" class="day">21 Jun</time>
+                        
+                        <time datetime="18:00" class="time">6:00 PM</time>
+                    </div>
+                    <div class="ticketRightSide">
+                        <h3>Saudi Arabia vs Paraguay - Match 3 Group A</h3>
+                      <p>New Murabba Stadium, Riyadh </p>
+                    
+                    </div>
+                    <a href="#" class="TicBtn" onclick="handleTicketClick(event, 'booking.html?match=Saudi Arabia vs Paraguay - Match 3 Group A&date=21 Jun&time=6:00 pm')">Tickets</a>
+                    </div>
+                </div>
+                <div class="ticketCard">
+                    <img src="/media/PrinceMohammedStadium.png" class="ticketImg"  alt="Prince Mohammed Bin Salman Stadium Stadium">
+                    <div class="ticketInfo">
+                    <div class="ticketSide">
+                        <time datetime="2034-06-23" class="day">23 Jun</time>
+                       
+                        <time datetime="18:00" class="time">9:00 PM</time>
+                    </div>
+                    <div class="ticketRightSide">
+                        <h3>Mexico vs USA - Match 1 Group B</h3>
+                      <p>Prince Mohammed Bin Salman Stadium, Riyadh </p>
+                    
+                    </div>
+                    <a href="#" class="TicBtn" onclick="handleTicketClick(event, 'booking.html?match=Mexico vs USA - Match 1 Group B&date=23 Jun&time=9:00 pm')">Tickets</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <p>&copy; 2026 Host Nation | All Rights Reserved</p>
+        </footer>
+
+        <script src="/Js/script.js"></script>
+        <script src="/Js/navbar.js"></script>
+    </body>
+</html>
