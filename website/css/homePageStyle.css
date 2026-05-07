@@ -1,0 +1,530 @@
+body {
+  font-family: "Jost", sans-serif;
+  background-color: #2E3569;
+  margin: 0;
+  padding: 0;
+}
+
+#headerSection {
+  background-image: url("/media/backgroundHomepage.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: top center;
+}
+
+@media (width >= 576px) {
+  #headerSection {
+    min-height: 300px;
+  }
+}
+@media (width >= 768px) {
+  #headerSection {
+    min-height: 400px;
+  }
+}
+
+@media (width >= 992px) {
+  #headerSection {
+    min-height: 500px;
+  }
+}
+
+@media (width >= 1200px) {
+  #headerSection {
+    min-height: 600px;
+  }
+}
+
+header {
+  display: flex;
+  align-items: center;
+  padding: 10px 16px;
+  gap: 10px;
+  position: relative;
+}
+
+@media (width >= 576px) {
+  header {
+    padding: 10px 24px;
+  }
+}
+
+@media (width >= 768px) {
+  header nav {
+    margin-left: auto;
+  }
+}
+
+#mainLogo {
+  width: auto;
+  height: 40px;
+  transition: height 0.3s ease;
+  display: block;
+}
+
+@media (width >= 576px) {
+  #mainLogo { height: 50px; }
+}
+
+@media (width >= 768px) {
+  #mainLogo { height: 70px; }
+}
+
+@media (width >= 992px) {
+  #mainLogo { height: 90px; }
+}
+
+#burgerButton {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 22px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: auto;
+  padding: 0;
+  z-index: 10;
+}
+
+#burgerButton span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #ffffff;
+  border-radius: 3px;
+  transition: 0.3s;
+}
+
+@media (width >= 768px) {
+  #burgerButton {
+    display: none;
+  }
+}
+
+#navMenu {
+  display: none;
+  flex-direction: column;
+  list-style: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: #2E3569;
+  padding: 10px 0;
+  margin: 0;
+  gap: 0;
+  z-index: 9;
+}
+
+#navMenu.open {
+  display: flex;
+}
+
+#navMenu li a {
+  display: block;
+  padding: 6px 24px;
+}
+
+@media (width >= 768px) {
+  #navMenu {
+    display: flex;
+    flex-direction: row;
+    position: static;
+    width: auto;
+    background: none;
+    padding: 0;
+    gap: 30px;
+  }
+
+}
+
+header nav a {
+  text-decoration: none;
+  font-size: 18px;
+  color: #ffffff;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+@media (width >= 768px) {
+  header nav a {
+    font-size: 20px;
+  }
+}
+
+@media (width >= 992px) {
+  header nav a {
+    font-size: 25px;
+  }
+}
+
+header nav a:hover {
+  color: #2E3569;
+}
+
+#loginBorder {
+  margin-top: 0px;
+  border: 2px solid #ffffff;
+  border-radius: 50px;
+}
+
+#loginBorder:hover {
+  border-color: #2E3569;
+}
+
+.homePageParagraph {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 60px;
+}
+@media (width >= 576px) {
+  .homePageParagraph{
+   padding: 60px 16px;
+  }
+}
+
+@media (width >= 768px) {
+  .homePageParagraph{
+    padding: 60px 16px;
+  }
+}
+
+@media (width >= 992px) {
+  .homePageParagraph{
+    padding: 90px 16px;
+  }
+}
+
+.homePageParagraph h1 {
+  font-size: 12px;
+  font-weight:600;
+  color: #22284F;
+  margin: 0;
+}
+
+@media (width >= 576px) {
+  .homePageParagraph h1 {
+    font-size: 18px;
+  }
+}
+
+@media (width >= 768px) {
+  .homePageParagraph h1 {
+    font-size: 26px;
+  }
+}
+
+@media (width >= 1100px) {
+  .homePageParagraph h1 {
+    font-size: 36px;
+  }
+}
+
+
+#ticketsSection {
+  padding: 40px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+#ticketsSection h2 {
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  margin: 0 0 24px 18px;
+}
+
+@media (width >= 576px) {
+  #ticketsSection h2{
+    font-size: 18px;
+  }
+}
+
+@media (width >= 768px) {
+  #ticketsSection h2{
+    font-size: 26px;
+  }
+}
+
+@media (width >= 1100px) {
+  #ticketsSection h2{
+    font-size: 36px;
+  }
+}
+
+.ticketCard {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #A154A1;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.ticketImg {
+    width: 100%;
+  height: 180px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  flex-shrink: 0;
+}
+
+.ticketInfo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex: 1;
+  width: 100%; 
+}
+ 
+.ticketSide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  background-color: #22284F;
+  padding: 12px 8px;
+  width: 70px;
+  min-width: 70px;
+  box-sizing: border-box;
+  align-self: stretch;
+}
+ 
+.ticketSide .day {
+  color: white;
+  font-weight: 700;
+  font-size: 12px;
+}
+ 
+.ticketSide .time {
+  color: white;
+  font-size: 10px;
+}
+.ticketRightSide {
+   flex: 1;
+    padding: 16px 5px;
+  }
+ 
+.ticketRightSide h3 {
+  color: #55AA5C;
+  font-size: 12px;
+  font-weight: 600;
+  margin: 0 0 6px 0;
+}
+ 
+.ticketRightSide p {
+  color: white;
+  font-size: 10px;
+  margin: 0;
+}
+ 
+.TicBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #55AA5C;
+  color: white;
+  font-weight: 400;
+  font-size: 10px;
+  text-decoration: none;
+  border: none;
+  border-radius: 50px;
+  width: 60px;
+  height: 25px;
+  padding: 5px;
+  margin: 0 18px;
+  text-align: center;
+  transition: background-color 0.3s;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+a{
+  text-decoration: none;
+}
+ 
+.TicBtn:hover {
+  background-color: rgb(18, 148, 66);
+}
+
+@media (width >= 564px) {
+  .ticketCard {
+    flex-direction: row;
+  }
+
+  .ticketImg {
+    width: 15%;
+    height: auto;
+  }
+ 
+  .ticketSide {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    min-width: 80px;
+    align-self: stretch;
+    gap: 6px;
+    padding: 16px 12px;
+  }
+ 
+  .ticketSide .day {
+    font-size: 14px;
+  }
+ 
+  .ticketSide .time {
+    font-size: 13px;
+  }
+ 
+  .ticketRightSide {
+    flex: 1;
+    padding: 16px;
+  }
+ 
+  .ticketRightSide h3 {
+    font-size: 15px;
+  }
+  .ticketRightSide p{
+    
+  font-size: 14px;
+  }
+ 
+  .TicBtn {
+    width: 90px;
+    height: 40px;
+    font-size: 14px;
+    padding: 0 2px;
+    margin: 0 16px;
+  }
+}
+
+@media (width >= 700px) {
+  .ticketSide {
+    width: 90px;
+    min-width: 90px;
+    padding: 20px 16px;
+    gap: 8px;
+  }
+
+  .ticketImg{
+    width: 25%;
+  }
+ 
+  .ticketSide .day {
+    font-size: 15px;
+  }
+ 
+  .ticketSide .time {
+    font-size: 14px;
+  }
+ 
+  .ticketRightSide {
+    padding: 16px 20px;
+  }
+ 
+  .ticketRightSide h3 {
+    font-size: 17px;
+  }
+ 
+  .ticketRightSide p {
+    font-size: 14px;
+  }
+ 
+  .TicBtn {
+    width: 100px;
+    height: 40px;
+    font-size: 15px;
+    padding: 0 2px;
+    margin: 0 20px;
+  }
+}
+
+@media (width >= 900px) {
+  .ticketSide {
+    width: 100px;
+    min-width: 100px;
+    padding: 20px;
+  }
+ .ticketImg {
+    width: 30%;
+  }
+  .ticketSide .day {
+    font-size: 16px;
+  }
+ 
+  .ticketSide .time {
+    font-size: 14px;
+  }
+ 
+  .ticketRightSide h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+ 
+  .ticketRightSide p {
+    font-size: 15px;
+  }
+ 
+  .TicBtn {
+    width: 120px;
+    height: 40px;
+    font-size: 16px;
+    padding: 0 3px;
+    margin: 0 24px;
+  }
+}
+
+@media (width >= 1200px) {
+  .ticketSide {
+    width: 110px;
+    min-width: 110px;
+    padding: 24px 20px;
+    gap: 10px;
+  }
+  .ticketImg {
+    width: 30%;
+  }
+ 
+  .ticketSide .day {
+    font-size: 18px;
+  }
+ 
+  .ticketSide .time {
+    font-size: 15px;
+  }
+ 
+  .ticketRightSide {
+    padding: 20px 24px;
+  }
+ 
+  .ticketRightSide h3 {
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+ 
+  .ticketRightSide p {
+    font-size: 19px;
+  }
+ 
+  .TicBtn {
+    font-size: 16px;
+    padding: 0 3px;
+    margin: 0 28px;
+  }
+}
+
+footer {
+  text-align: center;
+  color: white;
+}
+@media (width <= 600px){
+  footer{
+    font-size: 12px;
+  }
+}
+
