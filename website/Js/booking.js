@@ -116,8 +116,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     //confirm button
-    confirmBtn.addEventListener("click", function () {
-
+    document.getElementById("bookingForm").addEventListener("submit", function (e) {
+    e.preventDefault();
         let messages = [];
 
         messages = isFilled("userName", messages, "Name is missing");
