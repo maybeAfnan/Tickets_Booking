@@ -15,7 +15,15 @@ form.addEventListener("submit", function (e) {
     const message = document.getElementsByName("message")[0].value.trim();
     const dob = document.getElementsByName("dob")[0].value;
 
-    //validation
+   //validation
+    if (typeof firstName !== "string") {
+    messages.push("First name must be a string");
+    }
+
+    if (typeof lastName !== "string") {
+    messages.push("Last name must be a string");
+    }
+
     if (firstName.length < 2) {
         messages.push("First name must be at least 2 characters");
     }
@@ -24,8 +32,20 @@ form.addEventListener("submit", function (e) {
         messages.push("Last name must be at least 2 characters");
     }
 
+    if (!firstName.match(/^[A-Za-z ]+$/)) {
+    messages.push("First name must contain letters only");
+    }
+
+    if (!lastName.match(/^[A-Za-z ]+$/)) {
+    messages.push("Last name must contain letters only");
+    }
+
     if (!email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
         messages.push("Email format is wrong");
+    }
+
+    if (email.length > 200) {
+    messages.push("Email must be under 200 characters");
     }
 
     if (!mobile.match(/^[0-9]{10}$/)) {
@@ -44,8 +64,15 @@ form.addEventListener("submit", function (e) {
         messages.push("Please select date of birth");
     }
 
+    if (!dob.match(/^\d{4}-\d{2}-\d{2}$/)) {
+    messages.push("Date of birth must be a valid date");
+    }
+
     if (message.length <= 10) {
         messages.push("Message must be more than 10 characters");
+    }
+    if (message.length > 300) {
+    messages.push("Message must be under 300 characters");
     }
 
     
