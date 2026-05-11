@@ -182,7 +182,7 @@ document.addEventListener("DOMContentLoaded", function () {
         })
         .catch(function (error) {
             console.error("Error:", error);
-            msg.innerHTML = "Could not connect to server. Please try again.";
+            msg.innerHTML = "Could not connect to server";
             msg.style.color = "red";
             msg.style.display = "block";
         });
