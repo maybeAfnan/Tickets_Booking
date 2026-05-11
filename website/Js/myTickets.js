@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function () {
     })
     .catch(function (error) {
         console.error("Error:", error);
-        noTicketsMsg.textContent = "Could not load tickets. Please try again.";
+        noTicketsMsg.textContent = "Could not load tickets";
         noTicketsMsg.style.display = "block";
     });
 
