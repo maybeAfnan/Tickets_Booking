@@ -4,18 +4,8 @@ const port = 3000;
 
 //DB
 const mysql = require("mysql2");
-const pool = mysql.createPool({
-    connectionLimit: 10,
-    host: "localhost",
-    user: "root",
-    password: "root",
-    database: "tickets_booking",
-    port: 3306,
-});
-
 
 app.use("/", express.static("./website"));
-
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -68,21 +58,41 @@ app.post("/register", registerValidate, (req, res) => {
     const email = req.body.email.trim();
     const password = req.body.password.trim();
 
-    //check if email already exists
-    const checkQuery = "SELECT * FROM users WHERE email = ?";
-    pool.query(checkQuery, [email], (error, result) => {
-        if (error) throw error;
+    const db = mysql.createConnection({
+        host: "localhost",
+        user: "root",
+        password: "root",
+        database: "tickets_booking",
+        port: 3306,
+    });
 
-        if (result.length > 0) {
-            res.json({ status: false, err: "Email already registered, please login" });
-            return;
-        }
+    db.connect(function(err) {
+        if (err) throw err;
 
-        //insert new user
-        const insertQuery = "INSERT INTO users (email, password) VALUES (?, ?)";
-        pool.query(insertQuery, [email, password], (error, result) => {
-            if (error) throw error;
-            res.json({ status: true, err: "" });
+        //check if email already exists
+        const checkQuery = "SELECT * FROM users WHERE email = ?";
+        db.query(checkQuery, [email], function(err, result) {
+            if (err) {
+                db.end();
+                throw err;
+            }
+
+            if (result.length > 0) {
+                res.json({ status: false, err: "Email already registered, please login" });
+                db.end();
+                return;
+            }
+
+            //insert new user
+            const insertQuery = "INSERT INTO users (email, password) VALUES (?, ?)";
+            db.query(insertQuery, [email, password], function(err, result) {
+                if (err) {
+                    db.end();
+                    throw err;
+                }
+                res.json({ status: true, err: "" });
+                db.end();
+            });
         });
     });
 });
@@ -132,16 +142,32 @@ app.post("/login", loginValidate, (req, res) => {
     const email = req.body.email.trim();
     const password = req.body.password.trim();
 
-    //check email and password
-    const query = "SELECT * FROM users WHERE email = ? AND password = ?";
-    pool.query(query, [email, password], (error, result) => {
-        if (error) throw error;
+    const db = mysql.createConnection({
+        host: "localhost",
+        user: "root",
+        password: "root",
+        database: "tickets_booking",
+        port: 3306,
+    });
 
-        if (result.length > 0) {
-            res.json({ status: true, err: "", email: email });
-        } else {
-            res.json({ status: false, err: "Incorrect email or password." });
-        }
+    db.connect(function(err) {
+        if (err) throw err;
+
+        //check email and password
+        const query = "SELECT * FROM users WHERE email = ? AND password = ?";
+        db.query(query, [email, password], function(err, result) {
+            if (err) {
+                db.end();
+                throw err;
+            }
+
+            if (result.length > 0) {
+                res.json({ status: true, err: "", email: email });
+            } else {
+                res.json({ status: false, err: "Incorrect email or password." });
+            }
+            db.end();
+        });
     });
 });
 
@@ -260,10 +286,26 @@ app.post("/booking", bookingValidate, (req, res) => {
         match_time: req.body.matchTime.trim()
     };
 
-    const query = "INSERT INTO bookings SET ?";
-    pool.query(query, data, (error, result) => {
-        if (error) throw error;
-        res.json({ status: true, err: "" });
+    const db = mysql.createConnection({
+        host: "localhost",
+        user: "root",
+        password: "root",
+        database: "tickets_booking",
+        port: 3306,
+    });
+
+    db.connect(function(err) {
+        if (err) throw err;
+
+        const query = "INSERT INTO bookings SET ?";
+        db.query(query, data, function(err, result) {
+            if (err) {
+                db.end();
+                throw err;
+            }
+            res.json({ status: true, err: "" });
+            db.end();
+        });
     });
 });
 
@@ -276,10 +318,26 @@ app.get("/mytickets", (req, res) => {
         return;
     }
 
-    const query = "SELECT * FROM bookings WHERE email = ?";
-    pool.query(query, [email], (error, result) => {
-        if (error) throw error;
-        res.json({ status: true, err: "", bookings: result });
+    const db = mysql.createConnection({
+        host: "localhost",
+        user: "root",
+        password: "root",
+        database: "tickets_booking",
+        port: 3306,
+    });
+
+    db.connect(function(err) {
+        if (err) throw err;
+
+        const query = "SELECT * FROM bookings WHERE email = ?";
+        db.query(query, [email], function(err, result) {
+            if (err) {
+                db.end();
+                throw err;
+            }
+            res.json({ status: true, err: "", bookings: result });
+            db.end();
+        });
     });
 });
 
@@ -401,10 +459,26 @@ app.post("/contact", contactValidate, (req, res) => {
         message: req.body.message.trim()
     };
 
-    const query = "INSERT INTO contacts SET ?";
-    pool.query(query, data, (error, result) => {
-        if (error) throw error;
-        res.json({ status: true, err: "" });
+    const db = mysql.createConnection({
+        host: "localhost",
+        user: "root",
+        password: "root",
+        database: "tickets_booking",
+        port: 3306,
+    });
+
+    db.connect(function(err) {
+        if (err) throw err;
+
+        const query = "INSERT INTO contacts SET ?";
+        db.query(query, data, function(err, result) {
+            if (err) {
+                db.end();
+                throw err;
+            }
+            res.json({ status: true, err: "" });
+            db.end();
+        });
     });
 });
 
