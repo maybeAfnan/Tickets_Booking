@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <title>Contact Us</title>
+    <link rel="icon" type="image/x-icon" href="/media/icon1.png">
+    <link rel="stylesheet" href="/css/contact-style.css" >
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="contact-container">
+
+        
+        <header class="top-section">
+            <nav class="navbar">
+                <div class="logo">
+                    <a href="/html/index.html"><img src="/media/logoCA.png" alt="Host Nation Logo" class="logo-img"></a>
+                </div>
+
+                <div class="nav-right">
+                    <ul class="nav-links">
+                        <li><a href="/html/MyTickets.html">My Tickets</a></li>
+                        <li><a href="/html/about-us.html">About Us</a></li>
+                        <li><a href="/html/contact.html">Contact Us</a></li>
+                    </ul>
+
+                    <a href="/html/login.html" class="login-btn">Login</a>
+                </div>
+            </nav>
+
+            <h1>Contact us</h1>
+        </header>
+
+        
+        <div  class="divider">
+            <img src="/media/patternCA.png" alt="divider pattern">
+        </div >
+
+       
+        <main class="bottom-section">
+            <div class="form-box">
+                <form id="contactForm" action="/contact" method="POST" novalidate>
+
+
+                    <div class="row">
+                        <input type="text"
+                               name="firstName"
+                               placeholder="First Name*"
+                               required
+                               maxlength="30"
+                               pattern="[A-Za-z\s]{2,30}"
+                               title="First name should contain only letters and spaces.">
+
+                        <input type="text"
+                               name="lastName"
+                               placeholder="Last Name*"
+                               required
+                               maxlength="30"
+                               pattern="[A-Za-z\s]{2,30}"
+                               title="Last name should contain only letters and spaces.">
+                    </div>
+
+
+                    <select name="gender" required>
+                        <option value="" disabled selected>Gender*</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+
+
+                    <input type="date"
+                           name="dob"
+                           required>
+
+
+                    <input type="email"
+                           name="email"
+                           placeholder="Email*"
+                           required>
+
+
+                    <input type="tel"
+                           name="mobile"
+                           placeholder="Phone Number*"
+                           required
+                           maxlength="10"
+                           pattern="[0-9]{10}"
+                           title="Phone number must be exactly 10 digits.">
+
+
+                    <select name="language" required>
+                        <option value="" disabled selected>Language*</option>
+                        <option value="Arabic">Arabic</option>
+                        <option value="English">English</option>
+                        <option value="French">French</option>
+                    </select>
+
+
+                    <textarea name="message"
+                              placeholder="Your message..."
+                              required
+                              maxlength="300"></textarea>
+
+
+                    <button type="submit">Send Message</button>
+                    <div id="msg"></div>
+
+                </form>
+            </div >
+        </main>
+
+
+        <footer>
+            <p>© 2026 Host Nation | All Rights Reserved</p>
+        </footer>
+
+    </div>
+    <script src="/Js/contact.js"></script>
+    <script src="/Js/navbar.js"></script>
+</body>
+</html>
